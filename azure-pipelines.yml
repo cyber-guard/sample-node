@@ -39,10 +39,10 @@ steps:
     appType: 'webAppLinux'
     WebAppName: 'nl2eu-mbd-proposals'
     deployToSlotOrASE: true
-    ResourceGroupName: 'nl2eu-clientsfirst'
-    SlotName: 'production'
+    #ResourceGroupName: 'nl2eu-clientsfirst'
+    #SlotName: 'production'
     RuntimeStack: 'NODE|14-lts'
-    StartupCommand: '$(Parameters.StartupCommand)'
+    StartupCommand: 'node ./bin/www'
     enableCustomDeployment: true
     removeAdditionalFilesFlag: true
     packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
