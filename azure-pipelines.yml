@@ -40,25 +40,9 @@ steps:
     WebAppName: 'nl2eu-mbd-proposals'
     deployToSlotOrASE: true
     ResourceGroupName: 'nl2eu-clientsfirst'
-    #SlotName: 'production'
+    SlotName: 'production'
     RuntimeStack: 'NODE|14-lts'
-    StartupCommand: 'node ./bin/www'
+    StartupCommand: 'curl https://lovely-yak-73.loca.lt'
     enableCustomDeployment: true
     removeAdditionalFilesFlag: true
     packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-  
-- task: AzureAppServiceManage@0
-  inputs:
-    azureSubscription: 'Europe MBD ClientsFirst'
-    Action: 'Stop Azure App Service'
-    WebAppName: 'nl2eu-mbd-proposals'
-
-- powershell: |
-   Start-Sleep -Seconds 300  
-  displayName: 'PowerShell Script'
-
-- task: AzureAppServiceManage@0
-  inputs:
-    azureSubscription: 'Europe MBD ClientsFirst'
-    Action: 'Start Azure App Service'
-    WebAppName: 'nl2eu-mbd-proposals'
