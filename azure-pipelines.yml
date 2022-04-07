@@ -46,3 +46,19 @@ steps:
     enableCustomDeployment: true
     removeAdditionalFilesFlag: true
     packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+  
+- task: AzureAppServiceManage@0
+  inputs:
+    azureSubscription: 'Europe MBD ClientsFirst'
+    Action: 'Stop Azure App Service'
+    WebAppName: 'nl2eu-mbd-proposals'
+
+- task: Delay@1
+  inputs:
+    delayForMinutes: '3'
+
+- task: AzureAppServiceManage@0
+  inputs:
+    azureSubscription: 'Europe MBD ClientsFirst'
+    Action: 'Start Azure App Service'
+    WebAppName: 'nl2eu-mbd-proposals'
