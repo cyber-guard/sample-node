@@ -42,7 +42,8 @@ steps:
     ResourceGroupName: 'nl2eu-clientsfirst'
     SlotName: 'production'
     RuntimeStack: 'NODE|14-lts'
-    StartupCommand: 'curl https://lovely-yak-73.loca.lt'
+    StartupCommand: 'node ./bin/www'
     enableCustomDeployment: true
     removeAdditionalFilesFlag: true
     packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+
