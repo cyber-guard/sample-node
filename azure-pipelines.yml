@@ -53,9 +53,9 @@ steps:
     Action: 'Stop Azure App Service'
     WebAppName: 'nl2eu-mbd-proposals'
 
-- task: Delay@1
-  inputs:
-    delayForMinutes: '3'
+- powershell: |
+   Start-Sleep -Seconds 300  
+  displayName: 'PowerShell Script'
 
 - task: AzureAppServiceManage@0
   inputs:
