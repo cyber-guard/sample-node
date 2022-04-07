@@ -39,7 +39,7 @@ steps:
     appType: 'webAppLinux'
     WebAppName: 'nl2eu-mbd-proposals'
     deployToSlotOrASE: true
-    #ResourceGroupName: 'nl2eu-clientsfirst'
+    ResourceGroupName: 'nl2eu-clientsfirst'
     #SlotName: 'production'
     RuntimeStack: 'NODE|14-lts'
     StartupCommand: 'node ./bin/www'
