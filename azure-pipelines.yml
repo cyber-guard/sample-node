@@ -40,7 +40,7 @@ steps:
     WebAppName: 'nl2eu-mbd-proposals'
     deployToSlotOrASE: true
     ResourceGroupName: 'nl2eu-clientsfirst'
-    SlotName: 'production'
+    SlotName: 'dev'
     RuntimeStack: 'NODE|14-lts'
     StartupCommand: 'node ./bin/www'
     enableCustomDeployment: true
